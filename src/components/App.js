@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import { DragDropContext } from "react-beautiful-dnd";
 import initialData from "./initial-data";
-import Column from "./components/Column";
+import Column from "./Column";
 import logosvg from "./images/logo.svg";
 import styled from "styled-components";
 

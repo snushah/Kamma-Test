@@ -1,6 +1,5 @@
 import React from "react";
 import {   Link} from 'react-router-dom';
-import initialData from "./initial-data";
 import logosvg from "./images/logo.svg";
 import styled from "styled-components";
 
@@ -97,11 +96,8 @@ const More = styled.a`
 
 `
 class Test1 extends React.Component {
-  state = initialData;
 
-  onDragEnd = (result) => {
-    // TODO: reorder our column
-  };
+
 
   render() {
     return (

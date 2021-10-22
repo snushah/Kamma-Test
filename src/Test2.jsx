@@ -43,7 +43,7 @@ padding:20px;
 background: #fff;
 display:flex;
 flex-direction:column;
-
+min-width:400px;
 `;
 const Footer = styled.div`
 display:flex;
@@ -84,6 +84,12 @@ const FormItem = styled.div`
   align-self: center;
   min-width: 600px;
   padding:20px;
+  flex-direction:row;
+  @media (max-width: 720px) {
+    flex-direction:column;
+    width:100%;
+  }
+
 `;
 const FormLeft=styled.div`
     flex:1;
@@ -94,6 +100,12 @@ const FormLeft=styled.div`
     width:100%;
     padding-right:50px;
     font-weight:bold;
+    @media (max-width: 720px) {
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      max-width:200px;
+  }
 `;
 const FormRight=styled.div`
     flex:2;
@@ -113,10 +125,10 @@ font-size:16px;
 
 const Test2 = () => {
 
-    const [name, setName] = useState('Syed');
+    const [name, setName] = useState('');
     const [message, setMessage] = useState('');
-    const [friendname, setFriendname] = useState('Ashish Kumar');
-    const [friendemail, setFriendemail] = useState('snushah@gmail.com');
+    const [friendname, setFriendname] = useState('');
+    const [friendemail, setFriendemail] = useState('');
     const [submitText, setSubmitText] = useState('Submit');
     const [disabled, setDisabled] = useState(true);
     const [disabledForm, setDisabledForm] = useState(false);
@@ -137,19 +149,25 @@ const Test2 = () => {
               })
                 .then(result => {
                     console.log(result)
-                    setMessage(result)
                     setDisabledForm(false);
-                    setSubmitText('Success!');
+                    setMessage('Thank you!')
+                    setSubmitText('Submit');
+                    setName('');
+                    setFriendname('');
+                    setFriendemail('');
                 })
                 .catch(error =>{
-                  setMessage(error.message)
+                //  setMessage(error.message)
                   setSubmitText('Failed! Try again');
                   setDisabledForm(false);
                 });
+
+                return false;
         }
         else{
 
             setMessage('All fields are manditory')
+            return false;
         }
     }
     useEffect(() => {
