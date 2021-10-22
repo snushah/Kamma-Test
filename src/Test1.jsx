@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {   Link} from 'react-router-dom';
 import initialData from "./initial-data";
 import logosvg from "./images/logo.svg";
@@ -128,7 +127,7 @@ Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
             </p>
             <p>
             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            to find out more <a href='#'>click here</a>
+            to find out more <a href='/'>click here</a>
             </p>
             <p>
   I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure</p>

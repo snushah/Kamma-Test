@@ -36,11 +36,7 @@ const Heading = styled.h1`
 background: #fff;
 
 `;
-const Text = styled.div`
 
-background: #fff;
-
-`;
 const Contents = styled.div`
 min-height:500px;
 padding:20px;
@@ -117,12 +113,10 @@ font-size:16px;
 
 const Test2 = () => {
 
-    const [name, setName] = useState('');
-
-    const [count, setCount] = useState(0);
+    const [name, setName] = useState('Syed');
     const [message, setMessage] = useState('');
-    const [friendname, setFriendname] = useState('');
-    const [friendemail, setFriendemail] = useState('');
+    const [friendname, setFriendname] = useState('Ashish Kumar');
+    const [friendemail, setFriendemail] = useState('snushah@gmail.com');
     const [submitText, setSubmitText] = useState('Submit');
     const [disabled, setDisabled] = useState(true);
     const [disabledForm, setDisabledForm] = useState(false);
@@ -137,7 +131,7 @@ const Test2 = () => {
             setDisabledForm(true);
             axios({
                 method: 'post',
-                url: `https://api.applybox.co.uk/kammaapi`,
+                url: `https://applybox.uk/kammaapi`,
                 headers: { 'content-type': 'application/json' },
                 data: {name:name,friendemail:friendemail, friendname:friendname}
               })
@@ -145,9 +139,11 @@ const Test2 = () => {
                     console.log(result)
                     setMessage(result)
                     setDisabledForm(false);
+                    setSubmitText('Success!');
                 })
                 .catch(error =>{
                   setMessage(error.message)
+                  setSubmitText('Failed! Try again');
                   setDisabledForm(false);
                 });
         }
